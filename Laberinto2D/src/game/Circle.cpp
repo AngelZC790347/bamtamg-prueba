@@ -1,5 +1,8 @@
+#include "game/Letter.hpp"
+#include <GLUT/GLUT.h>
 #include <algorithm>
 #include <engine/render.hpp>
+#include <utils/filter.hpp>
 #include <cstdint>
 #include <cstdlib>
 #include <cstring>
@@ -15,13 +18,13 @@
 #include <game/Circle.hpp>
 #include <vector>
 #include <cmath>
-#include <utils/geometry.hpp>
+#include <utils/rect.hpp>
 #define STB_IMAGE_IMPLEMENTATION
 #include <utils/stb_image.h>
 Texture_t Circle::getTextureFromFile(){
     std::vector<unsigned char>pixels{};
     int dw{} , dh{},chanels{};
-    const char* fileName ="/Users/angelzuniga/Documents/programas/learning/Laberinto2D/assets/circulo2.jpeg";
+    const char* fileName ="/Users/angelzuniga/Documents/bamtamg-prueba/Laberinto2D/assets/circulo2.jpeg";
     unsigned char* textureData = stbi_load(fileName, &dw, &dh, &chanels, STBI_rgb_alpha);
     return Texture_t{
         textureData,
@@ -58,24 +61,33 @@ void Circle::handleKeyboard(unsigned char keyboard){
     float step = 10;
     bool cantMoveUp=false,cantMoveDown=false,cantMoveLeft=false,cantMoveRight=false;
     auto sprites = RenderSystem::Shared().getSprites();
-    std::cout<<"Player "<<_id<<std::endl;
+    auto spritesWithOuthPlayers = filter(sprites, [](auto sprite){
+        return (typeid(*sprite) != typeid(Letter_A_t) && typeid(*sprite) != typeid(Letter_B_t) && typeid(*sprite) != typeid(Circle));
+    });
+    std::cout<<std::endl<<"Player "<<_id<<std::endl;
     std::cout<<"X,Y: "<<getX()<<" ,"<<getY()<<std::endl;
     std::cout<<"W,H: "<<getWidth()<<" ,"<<getHeigth()<<std::endl<<std::endl;
+    for (auto sp : spritesWithOuthPlayers) {
+        if (sp->getId() == _id)
+        {
+            std::cout<<"No funciona"<<std::endl;
+        }
+    }
     std::cout<<"Left"<<std::endl;
-    cantMoveLeft =  std::none_of(sprites.begin(), sprites.end(), [&](Sprite_t* sp){
-        return overlap(Rect{sp->getX(),sp->getY(),sp->getWidth(),sp->getHeigth()},Rect{_X-step,_Y,_WIDTH,_HEIGTH});
+    cantMoveLeft =  std::none_of(spritesWithOuthPlayers.begin(), spritesWithOuthPlayers.end(), [&](Sprite_t* sp){
+        return Rect{sp->getX(),sp->getY(),sp->getWidth(),sp->getHeigth()}.overlap(Rect{_X-step,_Y,_WIDTH,_HEIGTH});
     });
     std::cout<<"Up"<<std::endl;
-    cantMoveUp =  std::none_of(sprites.begin(), sprites.end(), [&](Sprite_t* sp){
-        return overlap(Rect{sp->getX(),sp->getY(),sp->getWidth(),sp->getHeigth()},Rect{_X,_Y+step,_WIDTH,_HEIGTH});
+    cantMoveUp =  std::none_of(spritesWithOuthPlayers.begin(), spritesWithOuthPlayers.end(), [&](Sprite_t* sp){
+        return Rect{sp->getX(),sp->getY(),sp->getWidth(),sp->getHeigth()}.overlap(Rect{_X,_Y+step,_WIDTH,_HEIGTH});        
     });
     std::cout<<"Right"<<std::endl;
-    cantMoveRight =  std::none_of(sprites.begin(), sprites.end(), [&](Sprite_t* sp){
-        return overlap(Rect{sp->getX(),sp->getY(),sp->getWidth(),sp->getHeigth()},Rect{_X+step,_Y,_WIDTH,_HEIGTH});
+    cantMoveRight =  std::none_of(spritesWithOuthPlayers.begin(), spritesWithOuthPlayers.end(), [&](Sprite_t* sp){
+        return Rect{sp->getX(),sp->getY(),sp->getWidth(),sp->getHeigth()}.overlap(Rect{_X+step,_Y,_WIDTH,_HEIGTH});
     });
     std::cout<<"Down"<<std::endl;
-    cantMoveDown =  std::none_of(sprites.begin(), sprites.end(), [&](Sprite_t* sp){
-        return overlap(Rect{sp->getX(),sp->getY(),sp->getWidth(),sp->getHeigth()},Rect{_X,_Y-step,_WIDTH,_HEIGTH});
+    cantMoveDown =  std::none_of(spritesWithOuthPlayers.begin(), spritesWithOuthPlayers.end(), [&](Sprite_t* sp){
+        return Rect{sp->getX(),sp->getY(),sp->getWidth(),sp->getHeigth()}.overlap(Rect{_X,_Y-step,_WIDTH,_HEIGTH});        
     });
     switch (keyboard) {
         case 'w':
@@ -95,4 +107,5 @@ void Circle::handleKeyboard(unsigned char keyboard){
                 _X +=step;
             break;
     }
+    glutPostRedisplay();
 }

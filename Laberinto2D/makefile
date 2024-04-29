@@ -5,6 +5,7 @@ define COMPILE
 $(2) : $(3) $(4) $(ALLINCS)
 	$(1) -c -o $(2) $(3) $(5)
 endef
+
 define CPINC
 $(2): $(1)
 	$(MKDIR) $(2)

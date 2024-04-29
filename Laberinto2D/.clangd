@@ -1,5 +1,5 @@
 CompileFlags:
 	Add:
-    - "--include-directory=/Users/angelzuniga/Documents/programas/learning/Laberinto2D/include/"
-    - "--include-directory=/Users/angelzuniga/Documents/programas/learning/Laberinto2D/src/"
+    - "--include-directory=/Users/angelzuniga/Documents/bamtamg-prueba/Laberinto2D/include/"
+    - "--include-directory=/Users/angelzuniga/Documents/bamtamg-prueba/Laberinto2D/src/"
     - "-std=c++20"

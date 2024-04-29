@@ -4,13 +4,14 @@
 		{
 			"path": ".",
 		}
-	],
+	],	
 	"settings": {
-		"LSP": {
+		"LSP": {			
 			"clangd": {
 				"initializationOptions": {
-					"clangd.enable-config": true,	
+					// "clangd.enable-config": true,						
 				},
+				"enabled": true,
 			},
 		},
 	},

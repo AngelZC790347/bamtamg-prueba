@@ -1,4 +1,4 @@
-#include "engine/input.hpp"
+#include <engine/input.hpp>
 #include <cstring>
 #include <game/Cell.hpp>
 #include <game/Letter.hpp>
@@ -13,6 +13,7 @@
 #include<GLUT/glut.h>
 #include<OpenGL/OpenGL.h>
 #include <game/Circle.hpp>
+
 using namespace std;
 void renderScene() {
     RenderSystem::Shared().update();
@@ -24,11 +25,11 @@ void handleInput(unsigned char key, int x, int y){
     InputSystem::Shared().update(key);
     glutPostRedisplay();
 }
-void init(){
-    char* labFile = "/Users/angelzuniga/Documents/programas/learning/Laberinto2D/output.txt";
+void init(){        
+    char* labFile = "/Users/angelzuniga/Documents/bamtamg-prueba/Laberinto2D/output.txt";
     ifstream mapData(labFile);
     if (!mapData.is_open())
-    {
+    {        
         cerr<<"Fail to pen file";
         exit(EXIT_FAILURE);
     }
@@ -71,7 +72,7 @@ void init(){
         float heigth;        
     }mapDim{cellWidth*mapDimensions,cellHeigth*mapDimensions};    
     float currentPosX = glutGet(GLUT_SCREEN_WIDTH)/2-(mapDim.width/2);
-    float currentPosY = (glutGet(GLUT_SCREEN_HEIGHT) - mapDim.heigth)/2;
+    float currentPosY = (glutGet(GLUT_SCREEN_HEIGHT) + mapDim.heigth)/2;
     for (auto cells: map) { 
         for (auto isBlock : cells) {
             if (isBlock)
@@ -81,11 +82,11 @@ void init(){
             currentPosX += cellWidth;
         }
         currentPosX = glutGet(GLUT_SCREEN_WIDTH)/2-(mapDim.width/2);
-        currentPosY += cellHeigth;
+        currentPosY -= cellHeigth;
     }
-    auto player = new Circle(currentPosX+cellWidth,currentPosY-2*cellHeigth,cellWidth,cellHeigth);
-    RenderSystem::Shared().insertSprite(new Letter_A_t(currentPosX+cellWidth,currentPosY-2*cellHeigth,cellWidth,cellHeigth));
-    RenderSystem::Shared().insertSprite(new Letter_B_t(currentPosX+(posXB*cellWidth),currentPosY-2*cellHeigth-(posYB*cellHeigth),cellWidth,cellHeigth));
+    auto player = new Circle(currentPosX+cellWidth,((glutGet(GLUT_SCREEN_HEIGHT) + mapDim.heigth)/2)- cellHeigth,cellWidth,cellHeigth);
+    RenderSystem::Shared().insertSprite(new Letter_B_t(currentPosX+(cellHeigth*posXB),((glutGet(GLUT_SCREEN_HEIGHT) + mapDim.heigth)/2)-(cellHeigth*posYB),cellWidth,cellHeigth));
+    RenderSystem::Shared().insertSprite(new Letter_A_t(currentPosX+cellWidth,((glutGet(GLUT_SCREEN_HEIGHT) + mapDim.heigth)/2)- cellHeigth,cellWidth,cellHeigth));
     RenderSystem::Shared().insertSprite(player);
     InputSystem::Shared().insertSprite(player);
 }
