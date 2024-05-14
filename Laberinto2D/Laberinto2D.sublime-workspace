@@ -4,16 +4,56 @@
 		"selected_items":
 		[
 			[
-				"in",
-				"inc\t#include <…>"
+				"pos",
+				"posYB"
+			],
+			[
+				"cur",
+				"currentPosY"
+			],
+			[
+				"cu",
+				"currentPosX"
+			],
+			[
+				"id",
+				"id_t"
+			],
+			[
+				"s",
+				"spritesWithOuthPlayers"
+			],
+			[
+				"for",
+				"for"
+			],
+			[
+				"typ",
+				"typeid"
+			],
+			[
+				"fil",
+				"filter"
+			],
+			[
+				"ut",
+				"utils/"
+			],
+			[
+				"glut",
+				"glutPostRedisplay"
+			],
+			[
+				"e",
+				"end"
 			],
 			[
 				"inc",
 				"inc\t#include <…>"
 			],
 			[
-				"s",
-				"sprites"
+				"in",
+				"inc\t#include <…>"
 			],
 			[
 				"_",
@@ -92,10 +132,6 @@
 				"void"
 			],
 			[
-				"ut",
-				"utils/"
-			],
-			[
 				"STB",
 				"STBI_rgb"
 			],
@@ -156,10 +192,6 @@
 				"dw"
 			],
 			[
-				"e",
-				"end"
-			],
-			[
 				"b",
 				"begin"
 			],
@@ -202,10 +234,6 @@
 			[
 				"po",
 				"posXB"
-			],
-			[
-				"cur",
-				"currentPosX"
 			],
 			[
 				"Ga",
@@ -264,16 +292,8 @@
 				"struct"
 			],
 			[
-				"cu",
-				"currentPosX"
-			],
-			[
 				"res",
 				"resize"
-			],
-			[
-				"for",
-				"for"
 			],
 			[
 				"if",
@@ -408,10 +428,6 @@
 				"argv"
 			],
 			[
-				"glut",
-				"glutInit"
-			],
-			[
 				"Ope",
 				"OpenGL/"
 			],
@@ -498,22 +514,6 @@
 			[
 				"inet_n",
 				"inet_ntoa"
-			],
-			[
-				"em",
-				"emplace_back"
-			],
-			[
-				"pa",
-				"parseInterfaces"
-			],
-			[
-				"it",
-				"iterator_t"
-			],
-			[
-				"gs",
-				"gs_net_i.hpp>"
 			]
 		]
 	},
@@ -532,20 +532,28 @@
 		"selected_items":
 		[
 			[
+				"ui",
+				"UI: Select Theme"
+			],
+			[
+				"colo",
+				"UI: Select Color Scheme"
+			],
+			[
 				"lsp",
-				"LSP: Enable Language Server in Project"
+				"LSP: Toggle Log Panel"
 			],
 			[
 				"ins",
 				"Package Control: Install Package"
 			],
 			[
-				"re",
+				"remo",
 				"Package Control: Remove Package"
 			],
 			[
-				"colo",
-				"UI: Select Color Scheme"
+				"re",
+				"Package Control: Remove Package"
 			],
 			[
 				"l",
@@ -554,10 +562,6 @@
 			[
 				"select colo",
 				"UI: Select Color Scheme"
-			],
-			[
-				"ui",
-				"UI: Select Theme"
 			],
 			[
 				"col",
@@ -582,10 +586,6 @@
 			[
 				"color",
 				"UI: Select Color Scheme"
-			],
-			[
-				"remo",
-				"Package Control: Remove Package"
 			],
 			[
 				"for",
@@ -742,22 +742,27 @@
 	},
 	"expanded_folders":
 	[
-		"/Users/angelzuniga/Documents/bamtamg-prueba/Laberinto2D",
-		"/Users/angelzuniga/Documents/bamtamg-prueba/Laberinto2D/src"
+		"/Users/angelzuniga/Documents/bamtamg-prueba/Laberinto2D"
 	],
 	"file_history":
 	[
-		"/Users/angelzuniga/Documents/bamtamg-prueba/Laberinto2D/src/game/Circle.hpp",
-		"/Users/angelzuniga/Documents/bamtamg-prueba/Laberinto2D/src/main.cpp",
+		"/Users/angelzuniga/Documents/bamtamg-prueba/Laberinto2D/src/engine/render.cpp",
+		"/Users/angelzuniga/Documents/bamtamg-prueba/Laberinto2D/src/engine/render.hpp",
+		"/Users/angelzuniga/Documents/bamtamg-prueba/Laberinto2D/src/utils/filter.hpp",
+		"/Users/angelzuniga/Documents/bamtamg-prueba/Laberinto2D/Readme.md",
 		"/Users/angelzuniga/Documents/bamtamg-prueba/Laberinto2D/src/game/Circle.cpp",
+		"/Users/angelzuniga/Documents/bamtamg-prueba/Laberinto2D/output.txt",
+		"/Users/angelzuniga/Documents/bamtamg-prueba/Laberinto2D/src/main.cpp",
+		"/Users/angelzuniga/Documents/bamtamg-prueba/Laberinto2D/src/utils/rect.cpp",
+		"/Users/angelzuniga/Documents/bamtamg-prueba/Laberinto2D/src/utils/geometry.hpp",
 		"/Users/angelzuniga/Documents/bamtamg-prueba/Laberinto2D/Laberinto2D.sublime-project",
+		"/Users/angelzuniga/Documents/bamtamg-prueba/Laberinto2D/src/game/Cell.cpp",
+		"/Users/angelzuniga/Documents/bamtamg-prueba/Laberinto2D/src/game/Circle.hpp",
 		"/Users/angelzuniga/Documents/bamtamg-prueba/Laberinto2D/makefile",
 		"/Users/angelzuniga/Documents/bamtamg-prueba/Laberinto2D/.clangd",
 		"/Users/angelzuniga/Documents/bamtamg-prueba/Laberinto2D/src/game/Cell.hpp",
 		"/Users/angelzuniga/Documents/bamtamg-prueba/Laberinto2D/src/engine/sprite.cpp",
 		"/Users/angelzuniga/Documents/bamtamg-prueba/Laberinto2D/src/engine/sprite.hpp",
-		"/Users/angelzuniga/Documents/bamtamg-prueba/Laberinto2D/src/engine/render.cpp",
-		"/Users/angelzuniga/Documents/bamtamg-prueba/Laberinto2D/src/engine/render.hpp",
 		"/Users/angelzuniga/Documents/bamtamg-prueba/Laberinto2D/src/engine/movable.hpp",
 		"/Users/angelzuniga/Documents/bamtamg-prueba/Laberinto2D/src/engine/input.hpp",
 		"/Users/angelzuniga/Documents/bamtamg-prueba/Laberinto2D/src/engine/input.cpp",
@@ -868,17 +873,11 @@
 		"/Users/angelzuniga/Downloads/logo-fill.png",
 		"/Users/angelzuniga/Downloads/user.png",
 		"/Users/angelzuniga/Downloads/soporte.jpg",
-		"/Users/angelzuniga/Downloads/procesos-scaled.jpg",
-		"/Users/angelzuniga/Downloads/medida.jpg",
-		"/Users/angelzuniga/Downloads/logo.jpg",
-		"/Users/angelzuniga/Downloads/facebook.png",
-		"/Users/angelzuniga/Downloads/download.svg",
-		"/Users/angelzuniga/Downloads/background-2.png",
-		"/Users/angelzuniga/Downloads/background.png"
+		"/Users/angelzuniga/Downloads/procesos-scaled.jpg"
 	],
 	"find":
 	{
-		"height": 37.0
+		"height": 39.0
 	},
 	"find_in_files":
 	{
@@ -892,6 +891,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"sprites",
 			"5",
 			"1f",
 			"10",
@@ -925,7 +925,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 37.0
+		"height": 39.0
 	},
 	"input":
 	{
@@ -960,7 +960,7 @@
 	},
 	"output.diagnostics":
 	{
-		"height": 0.0
+		"height": 184.0
 	},
 	"output.find_results":
 	{
@@ -970,11 +970,15 @@
 	{
 		"height": 0.0
 	},
+	"output.mdpopups-dummy":
+	{
+		"height": 0.0
+	},
 	"pinned_build_system": "Packages/Zig Language/Build Systems/Zig.sublime-build",
 	"project": "Laberinto2D.sublime-project",
 	"replace":
 	{
-		"height": 70.0
+		"height": 74.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -984,12 +988,36 @@
 		"selected_items":
 		[
 			[
-				"ci",
-				"src/game/Circle.cpp"
+				"ma",
+				"src/main.cpp"
+			],
+			[
+				"o",
+				"output.txt"
 			],
 			[
 				"c",
-				"src/game/Circle.hpp"
+				"src/game/Circle.cpp"
+			],
+			[
+				"rec",
+				"src/utils/rect.cpp"
+			],
+			[
+				"re",
+				"src/engine/render.cpp"
+			],
+			[
+				"",
+				"src/game/Circle.cpp"
+			],
+			[
+				"cir",
+				"src/game/Circle.cpp"
+			],
+			[
+				"ci",
+				"src/game/Circle.cpp"
 			],
 			[
 				"sp",
@@ -997,10 +1025,6 @@
 			],
 			[
 				"m",
-				"src/main.cpp"
-			],
-			[
-				"ma",
 				"src/main.cpp"
 			],
 			[
@@ -1012,16 +1036,8 @@
 				"src/engine/movable.hpp"
 			],
 			[
-				"",
-				"src/game/Circle.cpp"
-			],
-			[
 				"r",
 				"src/engine/render.cpp"
-			],
-			[
-				"re",
-				"src/engine/render.hpp"
 			],
 			[
 				"rende",
@@ -1076,16 +1092,8 @@
 				"src/game/Circle.cpp"
 			],
 			[
-				"cir",
-				"src/game/Circle.hpp"
-			],
-			[
 				"mak",
 				"makefile"
-			],
-			[
-				"o",
-				"output.txt"
 			],
 			[
 				"colo",
@@ -1207,7 +1215,7 @@
 	"show_minimap": false,
 	"show_open_files": false,
 	"show_tabs": true,
-	"side_bar_visible": false,
+	"side_bar_visible": true,
 	"side_bar_width": 375.0,
 	"status_bar_visible": true,
 	"template_settings":
